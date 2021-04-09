@@ -8,5 +8,11 @@ RSpec.describe "Course" do
 
       expect(course.class).to eq(Course)
     end
+    it "sets all passed variables" do
+      course = Course.new("Calculus", 2)
+
+      expect(course.name).to eq("Calculus")
+      expect(course.capacity).to eq(2)
+    end
   end
 end
