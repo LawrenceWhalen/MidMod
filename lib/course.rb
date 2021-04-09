@@ -2,9 +2,12 @@ require "./lib/student"
 
 class Course
   attr_reader :name,
-              :capacity
+              :capacity,
+              :students
+              
   def initialize(name, capacity)
     @name = name
-    @capacity = capacity 
+    @capacity = capacity
+    @students = []
   end
 end
