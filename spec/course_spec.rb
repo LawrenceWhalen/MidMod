@@ -20,4 +20,11 @@ RSpec.describe "Course" do
       expect(course.students).to eq([])
     end
   end
+  describe "#full" do
+    it "checks if the number of students matches the course capacity" do
+      course = Course.new("Calculus", 2)
+
+      expect(course.full?).to eq(false)
+    end
+  end
 end
