@@ -10,8 +10,10 @@ class Student
   end
 
   def log_score(score)
-    @scores.push(score)
+    @scores.push(score.to_f)
   end
 
-  
+  def grade
+    (@scores.sum)/(@scores.length)
+  end
 end
