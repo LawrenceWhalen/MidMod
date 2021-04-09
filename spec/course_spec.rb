@@ -51,4 +51,17 @@ RSpec.describe "Course" do
       expect(course.students).to eq([student1, student2])
     end
   end
+  describe "#student_names" do
+    it "returns all the names of the students" do
+      course = Course.new("Calculus", 2)
+
+      student1 = Student.new({name: "Morgan", age: 21})
+      student2 = Student.new({name: "Jordan", age: 29})
+
+      course.enroll(student1)
+      course.enroll(student2)
+
+      expect(course.student_names).to eq(["Morgan", "Jordan"])
+    end
+  end
 end

@@ -18,4 +18,10 @@ class Course
   def enroll(student)
     @students.push(student)
   end
+
+  def student_names
+    @students.map do |student|
+      student.name
+    end
+  end
 end

@@ -22,9 +22,7 @@ class Term
 
   def all_students
     @courses.flat_map do |course|
-      course.students.map do |student|
-        student.name
-      end
+      course.student_names
     end
   end
 end
