@@ -14,4 +14,8 @@ class Course
   def full?
     @students.length >= @capacity
   end
+
+  def enroll(student)
+    @students.push(student)
+  end
 end
