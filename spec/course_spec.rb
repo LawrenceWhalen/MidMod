@@ -21,10 +21,29 @@ RSpec.describe "Course" do
     end
   end
   describe "#full" do
-    it "checks if the number of students matches the course capacity" do
+    it "can tell when a course isn't full" do
       course = Course.new("Calculus", 2)
 
       expect(course.full?).to eq(false)
+    end
+    it "can tell when a course is full" do
+      course = Course.new("Calculus", 2)
+
+      student1 = Student.new({name: "Morgan", age: 21})
+      student2 = Student.new({name: "Jordan", age: 29})
+    end
+  end
+  describe "#enroll" do
+    it "adds a student instance to the students state" do
+      course = Course.new("Calculus", 2)
+
+      student1 = Student.new({name: "Morgan", age: 21})
+      student2 = Student.new({name: "Jordan", age: 29})
+
+      course.enroll(student1)
+      course.enroll(student2)
+
+      exect(course.students).to eq([student1, student2])
     end
   end
 end
